@@ -1,7 +1,6 @@
 function getComputerChoice (){
-     //   RETURN randomly returns rock, paper or scissors using math.random
-    let localComputerChoice = Math.floor(Math.random()*3);
-    switch (localComputerChoice){
+    let localComputerChoice = Math.floor(Math.random()*3); // returns numbers from 0-2
+    switch (localComputerChoice){ // switch to link numbers to rock/paper/scissors
         case 0: return "rock";
         case 1: return "paper";
         case 2: return "scissors";
@@ -13,20 +12,31 @@ let testResult = getComputerChoice();
 console.log(testResult); */
 
 function getHumanChoice(){
-    let localHumanChoice = prompt("Please enter rock, paper or scissors to start a game", "");
+    let localHumanChoice = prompt("Please enter rock, paper or scissors to start a game", ""); // Prompt windows so user can chose 
     // also possible: localHumanChoice = localHumanChoice.toLowerCase();
-    return localHumanChoice.toLowerCase();
+    return localHumanChoice.toLowerCase(); // converts input into lower case so if in playRound function works (otherwise you would have to compare all different spellings)
 }
 
 
 function playGame (){
+    //New Scores in each game, not round
     let humanScore = 0;
     let computerScore = 0;
 
+    // for -> so each game has 5 rounds
+    for(let round = 1; round<=5; round++){
+        console.log(`Round ${round}`);
+        let humanChoice = getHumanChoice(); // has do be done new in each round to not just give the same variable to each "playRound"
+        let computerChoice = getComputerChoice(); // has do be done new in each round to not just give the same variable to each "playRound"
+        playRound(humanChoice, computerChoice);
+    }
+
+    console.log(`Final Score: Human ${humanScore} - Computer ${computerScore}`); // Output to let the user know the scores
+    
     function playRound(humanChoice, computerChoice){
 
         if (humanChoice === computerChoice){
-                console.log("Draw, play again");
+                console.log("Draw, play again"); // for when human and computer chose the same thing
                 return;}
         if (humanChoice === "rock" && computerChoice === "paper"){
                 console.log("You lose! Paper beats Rock.");
@@ -48,16 +58,11 @@ function playGame (){
                 return computerScore++;
             }
     }
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-playRound(humanChoice, computerChoice);
+
 }
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+playGame(); //calls the function so the game is played
+
 
 
  
