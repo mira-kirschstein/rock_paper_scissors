@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(187, 161, 190);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.bg{
+    display: flex;
+    height: 400px;
+    width: 700px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 35px;
+}
+
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+    flex:2;
+}
+
+button{
+    padding: 20px 40px;
+    margin: 10px;
+    background-color: rgb(90, 18, 90);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    font-size: 20px;
+    border-radius:25px;
+    border: none;
+    color: white;
+}
+
+.answers{
+    margin: 20px;
+    height: 100px;
+}
